@@ -1,0 +1,7 @@
+1.pojo映射：实体类在类名上用@TableName("task_xxx_xxx")指定对应表名即可实现基础curd
+2.事物管理：service的impl使用@Transactional注解标注在添加、修改等实现方法上
+3.多数据源切换：默认连接first数据库，在service的impl方法上使用@DataSource(name = DataSourceNames.SECOND)则使用指定数据库
+4.操作日志切面：在需要记录的Controller方法上加上@SysLog("xxx")用于描述方法 ("xxx")是描述内容
+5.打包方式：支持jar包和war包，jar包操作与以前一致。
+war包，打开cmd进入项目路径下如C:\Users\Xhe\Desktop\workspace\fastdev，输入mvn clean package -f pom-war.xml -Dmaven.test.skip=true命令即可（需要本机安装maven并配置好环境变量）
+
